@@ -1,0 +1,35 @@
+Rules the agent must follow when using this table
+
+Match by issue_category first.
+
+If multiple subtypes match, ask one clarifying question.
+
+If still ambiguous, route to Fallback Agent.
+
+Do not invent departments/queues not in the table.
+
+| issue_category | issue_subtype | keywords_examples | department | target_agent | escalation_flag |
+|----------------|---------------|-------------------|------------|--------------|-----------------|
+| Road & Sidewalk | pothole_driving_lane | pothole, hole, crater | Transportation | Transportation Ops Agent | false |
+| Road & Sidewalk | pothole_near_curb | pothole near curb, edge of road damage | Transportation | Transportation Ops Agent | false |
+| Road & Sidewalk | sidewalk_trip_hazard | broken sidewalk, lifted sidewalk, trip hazard | Transportation | Transportation Ops Agent | false |
+| Road & Sidewalk | road_surface_cracking | cracked pavement, road cracking, damaged asphalt | Transportation | Transportation Ops Agent | false |
+| Roads & Bridges | bridge_visible_damage | bridge damage, concrete falling, exposed rebar | Transportation | Transportation Ops Agent | true |
+| Roads & Bridges | guardrail_damage | damaged guardrail, bent barrier, missing guardrail | Transportation | Transportation Ops Agent | false |
+| Roads & Bridges | unsafe_construction_zone | unsafe construction, missing cones, poor signage | Transportation | Transportation Ops Agent | true |
+| Road & Sidewalk | unknown_transport_issue | road issue, traffic problem, transportation concern | Transportation | Transportation Ops Agent | false |
+| Transit & Stops | bus_shelter_damage | broken bus shelter, shattered glass, damaged shelter | Transit | Transportation Ops Agent | false |
+| Transit & Stops | bus_stop_accessibility | bus stop blocked, snow at bus stop, inaccessible stop | Transit | Transportation Ops Agent | false |
+| Transit & Stops | transit_service_complaint | bus late, missed stop, service delay | Transit | Transportation Ops Agent | false |
+| Utilities & Electrical | streetlight_outage | streetlight out, dark | Utilities & Electrical | Utilities & Electrical Agent | false |
+| Utilities & Electrical | streetlight_outage | streetlight out, light not working, dark street | Utilities & Electrical | Utilities & Electrical Agent | false |
+| Utilities & Electrical | streetlight_flickering | flickering streetlight, light flashing | Utilities & Electrical | Utilities & Electrical Agent | false |
+| Utilities & Electrical | traffic_signal_outage | traffic light out, signal flashing red | Utilities & Electrical | Utilities & Electrical Agent | true |
+| Utilities & Electrical | downed_public_wire | wire down, power line near sidewalk | Utilities & Electrical | Utilities & Electrical Agent | true |
+| Utilities & Electrical | unknown_utility_issue | electrical problem, utility issue | Utilities & Electrical | Utilities & Electrical Agent | false |
+| Water & Sewer | roadway_flooding | flooded road, standing water, water pooling | Water & Sewer | Utilities & Electrical Agent | true |
+| Water & Sewer | blocked_storm_drain | blocked drain, clogged catch basin | Water & Sewer | Utilities & Electrical Agent | false |
+| Water & Sewer | sewer_odor | sewer smell, strong odor from drain | Water & Sewer | Utilities & Electrical Agent | false |
+| Water & Sewer | manhole_damage | broken manhole cover, loose manhole | Water & Sewer | Utilities & Electrical Agent | true |
+| Water & Sewer | suspected_water_leak | water leaking, wet ground, possible leak | Water & Sewer | Utilities & Electrical Agent | false |
+| Water & Sewer | flooding_roadway | flooding, standing water | Water & Sewer | Utilities & Electrical Agent | true |
