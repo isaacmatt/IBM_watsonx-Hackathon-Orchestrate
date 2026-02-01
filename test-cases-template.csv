@@ -1,0 +1,6 @@
+Prompt,Answer
+Truck blocking road,critical transport issue
+Shipment status inquiry,no action required
+Vehicle leaking fluid,critical safety issue
+A vehicle is running late due to traffic.,Classify as non-urgent and provide operational guidance
+There is a delay but the vehicle is safely pulled over.,Classify as non-urgent issue and gather details for a work order
